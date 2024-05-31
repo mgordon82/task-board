@@ -34,5 +34,5 @@ THEN the saved tasks persist
 
 ## Links to Code and Live Site
 
-- The project is viewable on [Github Pages](https://mgordon82.github.io/personal-blog/)
+- The project is viewable on [Github Pages](https://mgordon82.github.io/task-board/)
 - The repository for this code is located on [GitHub](https://github.com/mgordon82/task-board)
