@@ -20,7 +20,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+      href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
     />
 
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -43,7 +43,28 @@
           Add Task
         </button>
       </div>
-      <div id="addTaskDialog" title="Add a Task">Adding fields here</div>
+      <div id="addTaskDialog" title="Add a Task">
+        <form>
+          <label for="taskTitle">Task Title</label>
+          <input
+            type="text"
+            name="taskTitle"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="taskTitle">Due Date</label>
+          <input
+            type="text"
+            name="taskTitle"
+            class="text ui-widget-content ui-corner-all"
+          />
+          <label for="taskTitle">Task Description</label>
+          <textarea
+            type="text"
+            name="taskTitle"
+            class="text ui-widget-content ui-corner-all"
+          ></textarea>
+        </form>
+      </div>
       <!-- Todo: Create a modal with a form to add tasks -->
       <div class="row swim-lanes text-center justify-content-between">
         <div class="col-12 col-lg-4 d-flex">
@@ -62,7 +83,14 @@
               <h2 class="card-title mb-1">In Progress</h2>
             </div>
             <div class="card-body bg-light">
-              <div id="in-progress-cards"></div>
+              <div id="in-progress-cards">
+                <section class="task-card">
+                  <h3>Task Name</h3>
+                  <p>Task Status: Due Today</p>
+                  <p>06/01/2024</p>
+                  <button>Delete</button>
+                </section>
+              </div>
             </div>
           </div>
         </div>
@@ -84,8 +112,8 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="

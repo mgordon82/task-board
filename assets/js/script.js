@@ -2,12 +2,15 @@
 let taskList = JSON.parse(localStorage.getItem('tasks'));
 let nextId = JSON.parse(localStorage.getItem('nextId'));
 
+// display button
+$('button').button();
+
 // Set const for controlling Dialog
 const TaskDialog = $('#addTaskDialog');
 const ButtonDialog = $('#taskDialogButton');
 
 function openTaskDialog() {
-  TaskDialog.dialog({ autoOpen: false });
+  TaskDialog.dialog({ autoOpen: false, modal: true });
   ButtonDialog.click(function () {
     TaskDialog.dialog('open');
   });
