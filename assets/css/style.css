@@ -13,10 +13,12 @@ body {
   background-color: #ccc;
   border-radius: 5px;
   padding: 10px 0;
+  margin-bottom: 10px;
+  z-index: 999;
   button {
-    background-color: red;
     color: white;
     border-radius: 5px;
+    border: 1px solid #333;
   }
 }
 
