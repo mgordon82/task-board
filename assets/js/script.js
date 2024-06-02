@@ -10,7 +10,7 @@ function getTaskFromLocalStorage() {
   return JSON.parse(localStorage.getItem('tasks')) || [];
 }
 
-function setTaskFromLocalStorage(value) {
+function setTaskToLocalStorage(value) {
   localStorage.setItem('tasks', JSON.stringify(value));
 }
 
@@ -37,13 +37,12 @@ function createTaskCard(task) {
     .text('Delete')
     .attr('data-task-id', task.id);
   deleteBtn.on('click', handleDeleteTask);
-  const section = `<section data-task-id=${task.id} class='${statusClass}'>
+  const section = $(`<section data-task-id=${task.id} class='${statusClass}'>
   <h3>${task.taskTitle}</h3>
   <p>${task.taskDescription}</p>
   <p>${task.dueDate}</p>
-   ${deleteBtn.outerHTML} 
-</section>`;
-  console.log('delete button', deleteBtn);
+</section>`);
+  section.append(deleteBtn);
   return (task.innerHTML = section);
 }
 
@@ -87,20 +86,31 @@ function handleAddTask(event) {
   };
   const taskList = getTaskFromLocalStorage();
   taskList.push(obj);
-  setTaskFromLocalStorage(taskList);
+  if (!obj.taskTitle || !obj.dueDate || !obj.taskDescription) {
+    const pEl = $('#error-p');
+    if (pEl.length > 0) {
+      return;
+    }
+    const taskForm = $('#taskForm');
+    const pElement = $('<p></p>');
+    pElement.attr('id', 'error-p');
+    pElement.addClass('error');
+    pElement.text('You must fill in the required fields');
+    taskForm.append(pElement);
+    return;
+  }
+  setTaskToLocalStorage(taskList);
+  renderTaskList();
   $('#taskForm')[0].reset();
   $('#staticBackdrop').modal('hide');
-  renderTaskList();
 }
 
 // Todo: create a function to handle deleting a task
 function handleDeleteTask(event) {
-  console.log('are we here');
-  const taskList = getTaskFromLocalStorage();
+  let taskList = getTaskFromLocalStorage();
   const currentTaskId = $(event.target).data('task-id');
-  const taskIndex = taskList.findIndex((task) => task.id == currentTaskId);
-  taskList.splice(taskIndex);
-  setTaskFromLocalStorage(taskList);
+  const updatedTaskArray = taskList.filter((task) => task.id != currentTaskId);
+  setTaskToLocalStorage(updatedTaskArray);
   renderTaskList();
 }
 
@@ -112,7 +122,7 @@ function handleDrop(event, ui) {
   const taskIndex = taskList.findIndex((task) => task.id == currentTaskId);
   if (taskIndex || taskIndex == 0) {
     taskList[taskIndex].status = newStatus;
-    setTaskFromLocalStorage(taskList);
+    setTaskToLocalStorage(taskList);
   }
 
   renderTaskList();

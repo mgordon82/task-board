@@ -25,3 +25,9 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+.error {
+  color: red;
+  font-size: 12px;
+  padding: 15px;
+}
