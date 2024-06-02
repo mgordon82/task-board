@@ -61,11 +61,13 @@
               <button
                 type="button"
                 class="btn-close"
+                id="headerCloseBtn"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
             <form id="taskForm">
+              <div id="errorMsg"></div>
               <div class="modal-body">
                 <div>
                   <label for="taskTitle" class="form-label">Task Title*</label>
@@ -103,6 +105,7 @@
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
+                  id="closeBtn"
                 >
                   Close
                 </button>

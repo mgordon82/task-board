@@ -29,5 +29,6 @@ body {
 .error {
   color: red;
   font-size: 12px;
-  padding: 15px;
+  padding: 5px 15px;
+  margin: 0;
 }

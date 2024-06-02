@@ -91,12 +91,12 @@ function handleAddTask(event) {
     if (pEl.length > 0) {
       return;
     }
-    const taskForm = $('#taskForm');
+    const errorArea = $('#errorMsg');
     const pElement = $('<p></p>');
     pElement.attr('id', 'error-p');
     pElement.addClass('error');
     pElement.text('You must fill in the required fields');
-    taskForm.append(pElement);
+    errorArea.append(pElement);
     return;
   }
   setTaskToLocalStorage(taskList);
@@ -128,9 +128,17 @@ function handleDrop(event, ui) {
   renderTaskList();
 }
 
+// Clearing elements if close button is hit
+function handleClose() {
+  $('#error-p').remove();
+  $('#taskForm')[0].reset();
+}
+
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
   renderTaskList();
+  $('#closeBtn').click(handleClose);
+  $('#headerCloseBtn').click(handleClose);
   $('#addTaskButton').click(handleAddTask);
   $('.lane').droppable({ accept: '.draggable', drop: handleDrop });
   $('#datepicker').datepicker({ changeMonth: true, changeYear: true });
