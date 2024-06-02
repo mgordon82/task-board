@@ -42,3 +42,11 @@ THEN the saved tasks persist
 
 - The project is viewable on [Github Pages](https://mgordon82.github.io/task-board/)
 - The repository for this code is located on [GitHub](https://github.com/mgordon82/task-board)
+
+## Resources
+
+[JQuery UI](https://jqueryui.com/)
+
+[Bootstrap UI](https://getbootstrap.com/)
+
+[DayJS](https://day.js.org/)
