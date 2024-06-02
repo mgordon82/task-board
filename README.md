@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The purpose of this project is to take a partially completed task board and add functionality to it so that the User Story is complete and the acceptance criteria is met
+The purpose of this project is to take a partially completed task board and add functionality to it so that the User Story is complete and the acceptance criteria is met. This project uses JQuery, bootstrap, and dayjs to build the view of this application
 
 ## User Story
 
@@ -31,6 +31,12 @@ THEN the task is removed from the task board and will not be added back after re
 WHEN I refresh the page
 THEN the saved tasks persist
 ```
+
+## Screenshots
+
+![Screen capture of the working task board](./assets/images/taskboard.png)
+
+![Screen capture of localstorage and the information retained](./assets/images/localStorage.png)
 
 ## Links to Code and Live Site
 
