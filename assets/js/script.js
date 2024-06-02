@@ -128,7 +128,7 @@ function handleDrop(event, ui) {
   renderTaskList();
 }
 
-// Clearing elements if close button is hit
+// Clearing elements if close button is clicked
 function handleClose() {
   $('#error-p').remove();
   $('#taskForm')[0].reset();
